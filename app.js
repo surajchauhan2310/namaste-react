@@ -15,6 +15,16 @@ const heading2 = React.createElement(
   { id: "heading", abc: "xyz" },
   "Hello React!"
 );
+const heading3 = React.createElement(
+  "h1",
+  { id: "heading", abc: "xyz" },
+  "Hello React!"
+);
+const heading4 = React.createElement(
+  "h1",
+  { id: "heading", abc: "xyz" },
+  "Hello React!"
+);
 // For Nested Element
 // const parent = React.createElement(
 //   "div",
