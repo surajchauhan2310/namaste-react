@@ -1,73 +1,51 @@
-// For Single element
-const heading = React.createElement(
-  "h1",
-  { id: "heading", abc: "xyz" },
-  "Hello React!"
-);
+import React from "react";
+import ReactDOM from "react-dom/client";
+import logo from "./img/magicdecor-logo.jpg";
 
-const heading1 = React.createElement(
-  "h1",
-  { id: "heading", abc: "xyz" },
-  "Hello React!"
-);
-const heading2 = React.createElement(
-  "h1",
-  { id: "heading", abc: "xyz" },
-  "Hello React!"
-);
-const heading3 = React.createElement(
-  "h1",
-  { id: "heading", abc: "xyz" },
-  "Hello React!"
-);
-const heading4 = React.createElement(
-  "h1",
-  { id: "heading", abc: "xyz" },
-  "Hello React!"
-);
-// For Nested Element
-// const parent = React.createElement(
-//   "div",
-//   { id: "parent" },
-//   React.createElement(
-//     "div",
-//     { id: "child" },
-//     React.createElement(
-//       "h1",
-//       { id: "header" },
-//       "Hello, I'm the Header of this page"
-//     )
-//   )
-// );
+// App structure*******************************
 
-// For Sibling Elements
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child1" }, [
-    React.createElement(
-      "h1",
-      { id: "header1s" },
-      "Hello, I'm the Header 1 of this page"
-    ),
-    React.createElement(
-      "h2",
-      { id: "header2" },
-      "Hello, I'm the Header 2 of this page"
-    ),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement(
-      "h1",
-      { id: "header1s" },
-      "Hello, I'm the Header 1 of this page"
-    ),
-    React.createElement(
-      "h2",
-      { id: "header2" },
-      "Hello, I'm the Header 2 of this page"
-    ),
-  ]),
-]);
-// console.log(heading);
+// 1.Headers
+// a) Logo
+// b) NavBar
+
+// 2.Body
+// a) Search Bar
+// b) Resto Container
+// c) Resto Cards
+
+// 3.Footer
+// a) Copyright
+// b) Links
+// c) Address
+// d) contacts
+
+// **********************************************
+
+const Header = () => {
+  return (
+    <div classname="header">
+      <div classname="logo-container">
+        <img classname="logo" src={logo} />
+      </div>
+      <div classname="navbar-container">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+const Body = () => {};
+const Footer = () => {};
+const AppLayout = () => {
+  return (
+    <div classname="app">
+      <Header />
+    </div>
+  );
+};
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
-console.log(parent);
+root.render(<AppLayout />);
