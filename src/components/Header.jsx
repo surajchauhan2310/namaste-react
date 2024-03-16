@@ -1,9 +1,9 @@
-// import logo from "../app/img/logo.jpg";
+import logo from "../img/logo.jpg";
 const Header = () => {
   return (
     <div className="header">
       <div className="logo-container">
-        {/* <img className="logo" src={logo} /> */}
+        <img className="logo" src={logo} />
       </div>
       <div className="navbar-container">
         <ul>

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import logo from "/img/logo.jpg";
+import logo from "/img/logo.jpg";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
