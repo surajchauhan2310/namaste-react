@@ -1,5 +1,9 @@
 import logo from "../img/logo.jpg";
+import { useState } from "react";
+
 const Header = () => {
+  let btnName = "Login";
+  const [btnNameReact, setBtnNameReact] = useState("Login");
   return (
     <div className="header">
       <div className="logo-container">
@@ -11,6 +15,17 @@ const Header = () => {
           <li>About Us</li>
           <li>Contact Us</li>
           <li>Cart</li>
+          <li>
+            <button
+              className="login"
+              onClick={() => {
+                setBtnNameReact("Logout");
+                console.log(setBtnNameReact);
+              }}
+            >
+              {btnNameReact}
+            </button>
+          </li>
         </ul>
       </div>
     </div>

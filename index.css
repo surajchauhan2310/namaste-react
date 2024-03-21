@@ -15,14 +15,23 @@
 .navbar-container > ul {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  color: #505050;
 }
 .navbar-container > ul > li {
   list-style-type: none;
-  padding: 0 8px;
+  padding: 10px 24px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: bold;
+  text-align: center;
+  /* align-items: center; */
 }
+/* .navbar-container > ul > li:hover {
+  color: white;
+  background-color: #505050;
+  transition: 0.4s all ease-in-out;
+} */
 .rest-container {
   display: flex;
   justify-content: space-between;
@@ -34,22 +43,74 @@
   /* height: 200px; */
   width: 240px;
   padding: 8px;
-  border: 1px solid #0f0f0f;
-  /* box-shadow: ; */
-  /* margin: 4px 0; */
+  border: 1px solid #505050;
+  margin-top: 12px;
   font-family: Arial, Helvetica, sans-serif;
-  border-radius: 4%;
+  border-radius: 3%;
+  transition: all 0.2s ease-in-out;
 }
 .rest-card > img {
   object-fit: cover;
-  aspect-ratio: 1/1;
+  aspect-ratio: 16/9;
+  opacity: 0.9;
   /* height: 75px; */
   width: 100%;
   border-radius: 4%;
+}
+.rest-card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+.rest-card > .card-title {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  color: #505050;
+  /* text-align: center; */
+}
+.rest-card > .card-subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  /* text-align: center; */
 }
 .filter-btn {
   cursor: pointer;
   padding: 4px 8px;
   /* background: white; */
   font-family: arial;
+}
+.shimmer-container {
+  display: flex;
+  justify-content: space-between;
+  /* gap: 8px; */
+  flex-wrap: wrap;
+  padding: 8px 0;
+}
+.shimmer-cards {
+  height: 300px;
+  width: 240px;
+  padding: 8px;
+  margin-top: 12px;
+  border: 1px solid #505050;
+  background-color: #fffff2;
+  border-radius: 4%;
+}
+.login {
+  cursor: pointer;
+  background-color: orange;
+  border: none;
+  color: #505050;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border: 2px solid orange;
+  font-weight: bold;
+}
+.login:hover {
+  background-color: white;
+  border: 2px solid orange;
+  color: orange;
+  transition: 0.3s all ease-in-out;
 }
