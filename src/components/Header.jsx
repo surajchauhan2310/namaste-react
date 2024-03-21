@@ -4,6 +4,8 @@ import { useState } from "react";
 const Header = () => {
   let btnName = "Login";
   const [btnNameReact, setBtnNameReact] = useState("Login");
+  console.log("Header rendered");
+
   return (
     <div className="header">
       <div className="logo-container">
@@ -19,8 +21,9 @@ const Header = () => {
             <button
               className="login"
               onClick={() => {
-                setBtnNameReact("Logout");
-                console.log(setBtnNameReact);
+                btnNameReact === "Login"
+                  ? setBtnNameReact("Logout")
+                  : setBtnNameReact("Login");
               }}
             >
               {btnNameReact}

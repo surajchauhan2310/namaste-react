@@ -5,23 +5,30 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   //Local state variable - superpowerful variable
+  const [searchText, setSearchText] = useState([""]);
 
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
+
+  const [filteredRestaurants, setFilteredRestaurants] = useState();
 
   useEffect(() => {
     fetchData();
   }, []);
+
+  console.log("Body rendered");
 
   const fetchData = async () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    // console.log(json);
-    const restaurants =
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
-    setListOfRestaurants(restaurants);
+
+    setFilteredRestaurants(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setListOfRestaurants(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
   //Conditional rendering
   return listOfRestaurants.length === 0 ? (
@@ -29,6 +36,28 @@ const Body = () => {
   ) : (
     <div className="Body">
       <div className="filter">
+        <div className="Search">
+          <input
+            type="text"
+            className="search-box"
+            placeholder="Search Restaurant, dishes...."
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              const filteredRestaurants = listOfRestaurants.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+
+              setFilteredRestaurants(filteredRestaurants);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
@@ -42,8 +71,8 @@ const Body = () => {
         </button>
       </div>
       <div className="rest-container">
-        {Array.isArray(listOfRestaurants) &&
-          listOfRestaurants.map((item) => {
+        {Array.isArray(filteredRestaurants) &&
+          filteredRestaurants.map((item) => {
             return <RestCard key={item.info.id} restData={item} />;
           })}
       </div>
