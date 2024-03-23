@@ -16,8 +16,8 @@ const RestCard = (props) => {
       </h4>
       <h4 className="card-subtitle">{restData.info.avgRating} stars</h4>
       <h4 className="card-subtitle">{restData.info.costForTwo}</h4>
-      <h4 className="card-subtitle">{restData.info.deliveryTime}</h4>
       <h4 className="card-subtitle">{restData.info.areaName}</h4>
+      <h4 className="card-subtitle">{restData.info.deliveryTime}</h4>
     </div>
   );
 };

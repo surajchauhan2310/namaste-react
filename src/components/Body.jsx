@@ -36,7 +36,7 @@ const Body = () => {
   ) : (
     <div className="Body">
       <div className="filter">
-        <div className="Search">
+        <div className="search">
           <input
             type="text"
             className="search-box"
@@ -47,6 +47,7 @@ const Body = () => {
             }}
           />
           <button
+            className="def-btn"
             onClick={() => {
               const filteredRestaurants = listOfRestaurants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -59,7 +60,7 @@ const Body = () => {
           </button>
         </div>
         <button
-          className="filter-btn"
+          className="def-btn"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4.2
