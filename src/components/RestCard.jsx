@@ -2,7 +2,7 @@ import { CDN_URL } from "../../utils/contants";
 
 const RestCard = (props) => {
   const { restData } = props;
-  console.log(props);
+  // console.log(props);
   return (
     <div className="rest-card">
       <img
